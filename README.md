@@ -18,7 +18,7 @@ Example:
 
 ```terraform
 module "s3-bucket" {
-  source                = "git::https://github.com/RubenLopSol/S3-bucket-Module.git"
+  source                = "git::https://github.com/RubenLopSol/Module_s3.git"
   bucket_name           = var.bucket_name
   enable_access_logging = true
   logging_bucket        = var.logging-bucket-name
