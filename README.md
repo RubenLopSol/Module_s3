@@ -19,9 +19,12 @@ Example:
 ```terraform
 module "s3-bucket" {
   source                = "git::https://github.com/RubenLopSol/Module_s3.git"
+  region                = var.region
+  project_name          = var.project_name
   bucket_name           = var.bucket_name
   enable_access_logging = true
-  logging_bucket        = var.logging-bucket-name
+  logging_bucket        = var.logging_bucket_name
+  logging_bucket_name   = var.logging_bucket_name
   environment           = var.environment
 
   lifecycle_rules = [
@@ -36,6 +39,7 @@ module "s3-bucket" {
   ]
 }
 ```
+- The **logging bucket** needs to be created beforehand (*must exist*).
 ### Step 2: Set the Variables
 
 - In your `variables.tf` file, set the variables that the module requires.
